@@ -7,5 +7,5 @@ import com.hannesdorfmann.mosby.mvp.MvpView;
  */
 
 public interface MainView extends MvpView {
-    void showHello();
+    void updateText(int panel, String msg);
 }

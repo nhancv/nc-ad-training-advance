@@ -1,5 +1,7 @@
 package com.nhancv.training.di;
 
+import org.greenrobot.eventbus.EventBus;
+
 import dagger.Component;
 
 /**
@@ -9,5 +11,5 @@ import dagger.Component;
 @AppScope
 @Component(modules = AppModule.class)
 public interface AppComponent {
-
+    EventBus bus();
 }
