@@ -79,4 +79,10 @@ dependencies {
     apt 'com.google.dagger:dagger-compiler:2.8'
     compile 'com.google.dagger:dagger:2.8'
     provided 'javax.annotation:jsr250-api:1.0'
+
+    //mosby mvp lib
+    compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
+    compile 'com.hannesdorfmann.mosby:viewstate:2.0.1'
+
+
 }
