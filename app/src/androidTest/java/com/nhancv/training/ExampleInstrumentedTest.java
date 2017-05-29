@@ -1,4 +1,4 @@
-package com.nhancv.advancecomponent;
+package com.nhancv.training;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
