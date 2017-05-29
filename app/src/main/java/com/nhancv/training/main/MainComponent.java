@@ -1,6 +1,7 @@
 package com.nhancv.training.main;
 
 import com.nhancv.training.di.AppComponent;
+import com.nhancv.training.di.NavigationModule;
 import com.nhancv.training.di.ViewScope;
 
 import dagger.Component;
@@ -10,7 +11,8 @@ import dagger.Component;
  */
 
 @ViewScope
-@Component(dependencies = AppComponent.class)
+@Component(dependencies = AppComponent.class,
+           modules = NavigationModule.class)
 public interface MainComponent {
     MainPresenter presenter();
 

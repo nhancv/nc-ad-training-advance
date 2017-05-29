@@ -6,6 +6,7 @@ import android.widget.Button;
 import com.hannesdorfmann.mosby.mvp.MvpActivity;
 import com.nhancv.training.MyApp;
 import com.nhancv.training.R;
+import com.nhancv.training.Screens;
 
 import org.androidannotations.annotations.AfterInject;
 import org.androidannotations.annotations.AfterViews;
@@ -15,6 +16,10 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
 import javax.inject.Inject;
+
+import ru.terrakok.cicerone.Navigator;
+import ru.terrakok.cicerone.commands.Back;
+import ru.terrakok.cicerone.commands.Forward;
 
 @EActivity(R.layout.activity_main)
 public class MainActivity extends MvpActivity<MainView, MainPresenter> implements MainView {
@@ -56,6 +61,29 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
     @Click(R.id.button2)
     protected void button2Click() {
         presenter.showMessage(1, "button2Clicked: " + System.currentTimeMillis());
+    }
+
+    @Click(R.id.button3)
+    protected void button3Click() {
+        presenter.backScreen();
+    }
+
+    @Click(R.id.button4)
+    protected void button4Click() {
+        presenter.nextScreen();
+    }
+
+    @Override
+    public Navigator getNavigator() {
+        return command -> {
+            if (command instanceof Forward) {
+                if (((Forward) command).getScreenKey().equals(Screens.NEXT_SCREEN)) {
+                    MainActivity_.intent(this).start();
+                }
+            } else if (command instanceof Back) {
+                finish();
+            }
+        };
     }
 
     @Override
