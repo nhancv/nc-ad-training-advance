@@ -17,15 +17,15 @@ import ru.terrakok.cicerone.Router;
 
 public class MainPresenter extends MvpBasePresenter<MainView> {
 
-    @Inject
-    protected NavigatorHolder navigatorHolder;
-    @Inject
-    protected Router router;
-    @Inject
-    protected EventBus bus;
+    private NavigatorHolder navigatorHolder;
+    private Router router;
+    private EventBus bus;
 
     @Inject
-    public MainPresenter() {
+    public MainPresenter(NavigatorHolder navigatorHolder, Router router, EventBus bus) {
+        this.navigatorHolder = navigatorHolder;
+        this.router = router;
+        this.bus = bus;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class MainPresenter extends MvpBasePresenter<MainView> {
     @Subscribe
     public void subScribeBus(ObjectBus objectBus) {
         if (isViewAttached()) {
-            getView().updateText(objectBus.panel, objectBus.msg);
+            getView().updateText(objectBus.getPanel(), objectBus.getMsg());
         }
     }
 
@@ -59,16 +59,6 @@ public class MainPresenter extends MvpBasePresenter<MainView> {
 
     public void showMessage(int panel, String msg) {
         bus.post(new ObjectBus(panel, msg));
-    }
-
-    private class ObjectBus {
-        int panel;
-        String msg;
-
-        ObjectBus(int panel, String msg) {
-            this.panel = panel;
-            this.msg = msg;
-        }
     }
 
 }
