@@ -2,8 +2,6 @@
 
 `mvp | dagger | event bus | router`
 
-**This** is a example project around using some useful android component programming
-
 - **mvp** - abbreviated from Model-View-Presenter which is modern android architecture.
 - **dagger** -  is a fully static, compile-time dependency injection framework for both Java and Android.
 - **event bus** - an Eventbus is a mechanism that allows different components to communicate with each other without knowing about each other.
