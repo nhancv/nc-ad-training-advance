@@ -162,6 +162,11 @@ In `app/build.gradle`
     //retrofit
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    //okhttp
+    compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    //gson
     compile 'com.google.code.gson:gson:2.7'
     //event bus
     compile 'org.greenrobot:eventbus:3.0.0'
