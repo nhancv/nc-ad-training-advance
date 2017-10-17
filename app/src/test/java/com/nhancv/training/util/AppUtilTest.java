@@ -13,4 +13,9 @@ public class AppUtilTest {
         Assert.assertTrue(AppUtil.isOdd(1));
     }
 
+    @Test
+    public void isOdd_false() throws Exception {
+        Assert.assertFalse(AppUtil.isOdd(2));
+    }
+
 }
