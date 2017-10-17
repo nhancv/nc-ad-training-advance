@@ -8,8 +8,7 @@ public class AppUtil {
 
 
     public static boolean isOdd(int num) {
-        if (num % 2 == 0) return false;
-        return true;
+        return num % 2 != 0;
     }
 
 
